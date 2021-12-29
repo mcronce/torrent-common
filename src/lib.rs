@@ -4,6 +4,10 @@ use std::time::Duration;
 /// Re-exported from [`torrent-name-parser`](torrent_name_parser::Metadata)
 pub use torrent_name_parser::Metadata;
 
+#[cfg(feature = "require-parse-names")]
+/// Re-exported from [`torrent-name-parser`](torrent_name_parser::error::ErrorMatch)
+pub use torrent_name_parser::error::ErrorMatch as ParseError;
+
 #[derive(Clone, Debug, Default, PartialEq)]
 /// Represents a torrent in a tracker somewhere.
 pub struct Torrent {
