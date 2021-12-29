@@ -1,0 +1,18 @@
+[package]
+name = "torrent-common"
+version = "0.1.0"
+authors = ["Mike Cronce <mike@quadra-tec.net>"]
+edition = "2021"
+license = "MIT"
+repository = "https://gitlab.cronce.io/foss/torrent-common"
+categories = []
+keywords = ["torrent", "bittorrent"]
+description = "A set of data structures used for bittorrent implementations"
+
+[features]
+parse-names = ["torrent-name-parser"]
+require-parse-names = ["torrent-name-parser"]
+
+[dependencies]
+torrent-name-parser = {version = "0.9", optional = true}
+
