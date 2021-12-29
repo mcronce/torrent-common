@@ -37,11 +37,17 @@ Build crate:
   script:
     - cargo update
     - cargo build
+    - cargo build --features=serde
     - cargo build --features=parse-names
+    - cargo build --features=parse-names,serde
     - cargo build --features=require-parse-names
+    - cargo build --features=require-parse-names,serde
     - cargo clippy --no-deps
+    - cargo clippy --no-deps --features=serde
     - cargo clippy --no-deps --features=parse-names
+    - cargo clippy --no-deps --features=parse-names,serde
     - cargo clippy --no-deps --features=require-parse-names
+    - cargo clippy --no-deps --features=require-parse-names,serde
 
 cargo test:
   stage: test
@@ -53,8 +59,11 @@ cargo test:
         - .cargo
   script:
     - cargo test
+    - cargo test --features=serde
     - cargo test --features=parse-names
+    - cargo test --features=parse-names,serde
     - cargo test --features=require-parse-names
+    - cargo test --features=require-parse-names,serde
 
 cargo doc:
   stage: test
@@ -66,8 +75,11 @@ cargo doc:
         - .cargo
   script:
     - cargo doc --no-deps
+    - cargo doc --no-deps --features=serde
     - cargo doc --no-deps --features=parse-names
+    - cargo doc --no-deps --features=serde,parse-names
     - cargo doc --no-deps --features=require-parse-names
+    - cargo doc --no-deps --features=serde,require-parse-names
 
 Publish crate:
   stage: deploy
