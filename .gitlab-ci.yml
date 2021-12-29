@@ -66,6 +66,8 @@ cargo doc:
         - .cargo
   script:
     - cargo doc --no-deps
+    - cargo doc --no-deps --features=parse-names
+    - cargo doc --no-deps --features=require-parse-names
 
 Publish crate:
   stage: deploy
