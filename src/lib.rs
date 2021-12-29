@@ -1,5 +1,8 @@
 use std::time::Duration;
 
+#[cfg(feature = "serde")]
+pub mod serde;
+
 #[cfg(any(feature = "parse-names", feature = "require-parse-names"))]
 /// Re-exported from [`torrent-name-parser`](torrent_name_parser::Metadata)
 pub use torrent_name_parser::Metadata;
