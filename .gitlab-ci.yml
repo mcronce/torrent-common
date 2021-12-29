@@ -35,7 +35,6 @@ Build crate:
       paths:
         - .cargo
   script:
-    - cargo update
     - cargo build
     - cargo build --features=parse-names
     - cargo build --features=require-parse-names
