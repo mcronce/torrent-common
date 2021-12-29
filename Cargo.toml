@@ -12,9 +12,7 @@ description = "A set of data structures used for bittorrent implementations"
 [features]
 parse-names = ["torrent-name-parser"]
 require-parse-names = ["torrent-name-parser"]
-deserialize = ["serde"]
 
 [dependencies]
-serde = {version = "1", optional = true, features = ["derive"]}
 torrent-name-parser = {version = "0.9", optional = true}
 

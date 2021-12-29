@@ -1,14 +1,10 @@
 use std::time::Duration;
 
-#[cfg(all(feature = "serde", any(feature = "parse-names", feature = "require-parse-names")))]
-pub mod serde;
-
 #[cfg(any(feature = "parse-names", feature = "require-parse-names"))]
 /// Re-exported from [`torrent-name-parser`](torrent_name_parser::Metadata)
 pub use torrent_name_parser::Metadata;
 
 #[derive(Clone, Debug, Default, PartialEq)]
-#[cfg_attr(all(feature = "serde", not(any(feature = "parse-names", feature = "require-parse-names"))), derive(serde::Deserialize))]
 /// Represents a torrent in a tracker somewhere.
 pub struct Torrent {
 	pub name: String,
