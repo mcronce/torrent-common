@@ -4,7 +4,7 @@ use std::convert::TryFrom;
 use std::time::Duration;
 
 #[derive(Clone, Debug, serde::Deserialize)]
-/// Helper struct that derives Deserialize, which can then be converted to [`Torrent`](crate::Torrent) with `.into()` or `.try_into()`
+/// Helper struct that derives Deserialize, which can then be converted to [`Torrent`](crate::Torrent) with `.into()` when `parse-names` is enabled or `.try_into()` when `require-parse-names` is enabled
 pub struct Torrent {
 	pub name: String,
 	pub size: u64,
