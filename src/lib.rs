@@ -5,6 +5,7 @@ use std::time::Duration;
 pub use torrent_name_parser::Metadata;
 
 #[derive(Clone, Debug, Default, PartialEq)]
+/// Represents a torrent in a tracker somewhere.
 pub struct Torrent {
 	pub name: String,
 	#[cfg(all(feature = "parse-names", not(feature = "require-parse-names")))]
@@ -40,6 +41,7 @@ impl Torrent {
 
 	#[cfg(not(feature = "require-parse-names"))]
 	#[inline]
+	/// Constructs a new `Torrent` from values.  If the `parse-names` or `require-parse-names` feature is enabled, will include metadata; if the `require-parse-names` feature is enabled, parsing is non-optional, and the function will return an error.
 	pub fn new(name: String, size: u64, categories: Vec<u32>, link: String, seeders: Option<u16>, leechers: Option<u16>, minimum_ratio: Option<f32>, minimum_seedtime: Option<Duration>) -> Self {
 		Self{
 			#[cfg(feature = "parse-names")]
