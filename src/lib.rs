@@ -3,6 +3,18 @@ use std::time::Duration;
 #[cfg(any(feature = "parse-names", feature = "require-parse-names"))]
 /// Re-exported from [`torrent-name-parser`](torrent_name_parser::Metadata)
 pub use torrent_name_parser::Metadata;
+#[cfg(any(feature = "parse-names", feature = "require-parse-names"))]
+/// Re-exported from [`torrent-name-parser`](torrent_name_parser::Resolution)
+pub use torrent_name_parser::Resolution;
+#[cfg(any(feature = "parse-names", feature = "require-parse-names"))]
+/// Re-exported from [`torrent-name-parser`](torrent_name_parser::Quality)
+pub use torrent_name_parser::Quality;
+#[cfg(any(feature = "parse-names", feature = "require-parse-names"))]
+/// Re-exported from [`torrent-name-parser`](torrent_name_parser::Codec)
+pub use torrent_name_parser::Codec;
+#[cfg(any(feature = "parse-names", feature = "require-parse-names"))]
+/// Re-exported from [`torrent-name-parser`](torrent_name_parser::Audio)
+pub use torrent_name_parser::Audio;
 
 #[cfg(feature = "require-parse-names")]
 /// Re-exported from [`torrent-name-parser`](torrent_name_parser::error::Error)
