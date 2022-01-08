@@ -5,8 +5,8 @@ use std::time::Duration;
 pub use torrent_name_parser::Metadata;
 
 #[cfg(feature = "require-parse-names")]
-/// Re-exported from [`torrent-name-parser`](torrent_name_parser::error::ErrorMatch)
-pub use torrent_name_parser::error::ErrorMatch as ParseError;
+/// Re-exported from [`torrent-name-parser`](torrent_name_parser::error::Error)
+pub use torrent_name_parser::error::Error as ParseError;
 
 #[derive(Clone, Debug, Default, PartialEq)]
 /// Represents a torrent in a tracker somewhere.
@@ -29,7 +29,7 @@ pub struct Torrent {
 impl Torrent {
 	#[cfg(feature = "require-parse-names")]
 	#[inline]
-	pub fn new(name: String, size: u64, categories: Vec<u32>, link: String, seeders: Option<u16>, leechers: Option<u16>, minimum_ratio: Option<f32>, minimum_seedtime: Option<Duration>) -> Result<Self, torrent_name_parser::error::ErrorMatch> {
+	pub fn new(name: String, size: u64, categories: Vec<u32>, link: String, seeders: Option<u16>, leechers: Option<u16>, minimum_ratio: Option<f32>, minimum_seedtime: Option<Duration>) -> Result<Self, torrent_name_parser::error::Error> {
 		Ok(Self{
 			metadata: Metadata::from(&name)?,
 			name,
