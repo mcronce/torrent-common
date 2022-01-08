@@ -16,3 +16,6 @@ require-parse-names = ["torrent-name-parser"]
 [dependencies]
 torrent-name-parser = {version = "0.9", optional = true}
 
+[patch.crates-io]
+torrent-name-parser = { git = "https://github.com/mcronce/torrent-name-parser", branch = "optimizations" }
+
